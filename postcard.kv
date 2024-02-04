@@ -1,0 +1,99 @@
+<PostCard>
+    orientation:"vertical"
+    size_hint_y:None
+    height:"420dp"
+    spacing:"2dp"
+    elevation:0
+
+    MDBoxLayout:
+        padding:"2dp"
+        adaptive_height:True
+
+        OneLineAvatarListItem:
+            text:f"[b][size=14]{root.username}[/size][/b]"
+            divider:None
+            _no_ripple_effect:True
+
+            ImageLeftWidget:
+                source:root.avatar
+                radius:[20,]
+
+        MDIconButton:
+            icon:"dots-vertical"
+
+    ##post
+    FitImage:
+        adaptive_height:True
+        source:root.post
+
+    MDBoxLayout:
+        padding:["5dp",0,0,0]
+        spacing:"2dp"
+        adaptive_height:True
+
+        MDIconButton:
+            icon:"heart-outline"
+
+        MDIconButton:
+            icon:"message-outline"
+
+        MDIconButton:
+            icon:"send-outline"
+
+        Widget:
+
+        MDIconButton:
+            icon:"heart-outline"
+
+    MDBoxLayout:
+        orientation:"vertical"
+        padding:["5dp",0,0,0]
+        spacing:"2dp"
+        adaptive_height:True
+
+        MyLabel:
+            text:f"{root.likes} likes"
+            bold:True
+
+        MyLabel:
+            markup:True
+            text:f"[b]{root.username}[/b] {root.caption}"
+
+        HalfOpacityLabel:
+            text:f"View all {root.comments} comments"
+
+    MDBoxLayout:
+        padding:["5dp",0,0,0]
+        spacing:"2dp"
+        adaptive_height:True
+
+        FitImage:
+            source:
+            size_hint:None,None
+            size:["20dp","20dp"]
+            radius:[20,]
+
+        HalfOpacityLabel:
+            text:"Add a comment"
+            halign:"left"
+
+    MDBoxLayout:
+        padding:["9dp",0,0,0]
+        spacing:"2dp"
+        adaptive_height:True
+
+        HalfOpacityLabel:
+            font_size:"10sp"
+            text:"Add a comment"
+
+<MyLabel@MDLabel>
+    adaptive_height:True
+    font_size:"12sp"
+
+<HalfOpacityLabel@MDLabel>
+    theme_text_color:"Custom"
+    text_color:[0,0,0,5]
+
+
+
+
